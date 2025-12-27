@@ -4,9 +4,10 @@
 
     title.addEventListener('click', () => {
     if (body.style.backgroundColor === "rgb(64, 255, 182)") {
-    body.style.backgroundColor = "#f16b55"; // Back to original orange
+    body.style.backgroundColor = "#f16b55";
 } else {
-    body.style.backgroundColor = "#40ffb6"; // Switch to green
+    body.style.backgroundColor = "#40ffb6";
+    button.style.color = "#fff";
 }
 });
 </script>
