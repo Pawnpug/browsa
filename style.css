@@ -46,14 +46,14 @@ h1 {
 }
 
 .footer {
-    padding-top: 400px;
+    margin-top: auto;
     display: flex;
     gap: 20px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding-bottom: 30px;
-
+    padding-top: 50px;
 }
 
 .footer a {
