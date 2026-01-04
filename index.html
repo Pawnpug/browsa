@@ -1,32 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="/hettla.svg" type="image/x-icon">
+    <link rel="icon" href="/hettlaG.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
     <title>Hettla</title>
 </head>
 <body>
-<h1 class="noselect">Hettla</h1>
-<img src="logoF.svg" alt="Hettla logo" style="width: 400px;">
-<p></p>
 
-<script>
-    const title = document.querySelector('h1');
-    const body = document.querySelector('body');
+<div class="background"></div>
 
-    const getRandomColor = () => {
-        const chars = '0123456789ABCDEF';
-        let color = '#';
-        for (let i = 0; i < 6; i++) {
-            color += chars[Math.floor(Math.random() * 16)];
-        }
-        return color;
-    };
+<div class="content">
+    <header class>
+        <div class="header">
+            <h1 class="noselect">Hettla</h1>
+        </div>
+    </header>
 
-    title.addEventListener('click', () => {
-        body.style.backgroundColor = getRandomColor();
-    });
-</script>
+    <section class="glass about">
+        <p>Vi utvecklar interna applikationer som förenklar arbetsflöden och sparar tid för hela organisationen. Applikationerna kan användas fristående eller integreras med andra system efter behov.</p>    </section>
+</div>
+
+<div class="carousel">
+    <div class="group">
+        <img src="pyth.png" alt="1" style="width: 50px;">
+        <img src="fastapi.svg" alt="2" style="width: 50px;">
+        <img src="zc.svg" alt="3" style="width: 50px;">
+        <img src="svelte.png" alt="4" style="width: 50px;">
+        <img src="excel.png" alt="5" style="width: 50px;">
+        <img src="slack.png" alt="6" style="width: 50px;">
+        <img src="drive.png" alt="7" style="width: 50px;">
+
+    </div>
+    <div aria-hidden="true" class="group">
+        <img src="pyth.png" alt="1" style="width: 50px;">
+        <img src="fastapi.svg" alt="2" style="width: 50px;">
+        <img src="zc.svg" alt="3" style="width: 50px;">
+        <img src="svelte.png" alt="4" style="width: 50px;">
+        <img src="excel.png" alt="5" style="width: 50px;">
+        <img src="slack.png" alt="6" style="width: 50px;">
+        <img src="drive.png" alt="7" style="width: 50px;">
+    </div>
+</div>
+
+<div class="cta-container">
+    <a href="mailto:hugowennbergdixon@gmail.com" class="cta-button">@</a>
+</div>
+
+<footer class ="footer">
+    <a href="https://www.linkedin.com/company/hettla/">LinkedIn</a>
+    <img src="logoB.svg" alt="Hettla logo" style="width: 100px;">
+</footer>
+
 </body>
 </html>
