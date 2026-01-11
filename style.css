@@ -6,7 +6,7 @@ body {
     padding: 0;
     font-family: Roboto;
     color: #000000;
-    background: linear-gradient(135deg, rgb(209, 246, 213) 0%, rgba(141, 242, 83, 0.47) 90%);
+    background: linear-gradient(135deg, rgb(209, 246, 213) 0%, rgb(51, 102, 255) 90%);
 }
 
 h1 {
@@ -106,8 +106,8 @@ p {
 }
 
 .cta-button {
-    background: rgba(55, 231, 82, 0.35);
-    border: 1px solid rgba(55, 231, 82, 0.43);
+    background: rgb(84, 154, 255);
+    border: 1px solid rgb(132, 116, 255);
 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
