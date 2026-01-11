@@ -6,7 +6,7 @@ body {
     padding: 0;
     font-family: Roboto;
     color: #000000;
-    background: linear-gradient(135deg, rgb(209, 246, 213) 0%, rgb(51, 102, 255) 90%);
+    background: linear-gradient(135deg, rgb(146, 160, 255) 0%, rgb(51, 102, 255) 70%);
 }
 
 h1 {
@@ -107,7 +107,7 @@ p {
 
 .cta-button {
     background: rgb(84, 154, 255);
-    border: 1px solid rgb(132, 116, 255);
+    border: 1px solid rgba(0, 0, 0, 0.36);
 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -117,12 +117,14 @@ p {
     text-decoration: none;
     font-weight: 500;
     font-size: 18px;
-    transition: background 0.3s ease;
+    transition: all 0.4s ease;
 }
 
 .cta-button:hover {
     background: rgba(255, 255, 255, 0.27);
     border: 1px solid rgba(255, 255, 255, 0.82);
+    transition: background 0.3s ease;
+
 }
 
 .group {
