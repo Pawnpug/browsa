@@ -2,55 +2,144 @@
 <html lang="sv">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="/hettla.png?v=2" type="image/png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Tomorrow:wght@300;400;500;600;700&display=swap">
     <title>Hettla</title>
     <meta name="description" content="Systemutveckling för små och stora företag">
 </head>
 <body>
 
-<div class="background"></div>
-
 <div class="content">
     <header>
         <div class="header">
-            <h1 class="noselect">Hettla</h1>
+            <img src="images/hletter.svg" alt="Hettla logo" width="30px">
+            <h1 class="noselect">ETTLA</h1>
         </div>
     </header>
-
-    <section class="">
-        <p>IT-lösningar som förenklar arbetsflöden och sparar resurser för hela organisationen. Applikationerna kan användas fristående eller integreras med andra system efter behov.</p>    </section>
 </div>
 
-<div class="carousel">
-    <div class="group">
-        <img src="pyth.png" alt="Python logo" style="width: 50px;">
-        <img src="fastapi.svg" alt="Fast Api logo" style="width: 50px;">
-        <img src="zc.svg" alt="Zoho Creator logo" style="width: 50px;">
-        <img src="Ruby.png" alt="Ruby logo" style="width: 50px;">
-        <img src="excel.png" alt="Excel logo" style="width: 50px;">
-        <img src="slack.png" alt="Slack logo" style="width: 50px;">
-        <img src="drive.png" alt="Drive logo" style="width: 50px;">
-
+<main class="main-container">
+    <div class="text-section">
+        <h2>Applikationer för fordonsindustrin och maskininstallation <span class="sub-text">[och allt därmellan]</span></h2>
+        <p class="hero-text">Hettla levererar smarta IT-lösningar som förenklar arbetsflöden och sparar tid. Applikationerna kan användas separat eller integreras med era befintliga system. vVanligtvis görs en genomgång av organisationen för identifiera flaskhalsar och dolda problem som ska lösas, om ni redan har identifierat dem kör vi på direkt!</p>
+        
+        <div class="contact-links">
+            <a href="mailto:hugowennbergdixon@gmail.com" class="cta-button">@</a>
+            <a href="https://www.linkedin.com/company/hettla/" class="linkedin-link">LinkedIn</a>
+        </div>
     </div>
-    <div aria-hidden="true" class="group">
-        <img src="pyth.png" alt="Python logo" style="width: 50px;">
-        <img src="fastapi.svg" alt="Fast Api logo" style="width: 50px;">
-        <img src="zc.svg" alt="Zoho Creator" style="width: 50px;">
-        <img src="Ruby.png" alt="Ruby logo" style="width: 50px;">
-        <img src="excel.png" alt="Excel logo" style="width: 50px;">
-        <img src="slack.png" alt="Slack logo" style="width: 50px;">
-        <img src="drive.png" alt="Drive logo" style="width: 50px;">
+
+    <div class="right-column">
+        <section class="workflow">
+
+            <div class="doc-icon">
+                <span class="doc-icon__label">Regnummer</span>
+                <div class="doc-icon__paper">
+                    <div class="doc-icon__line"></div>
+                    <div class="doc-icon__line"></div>
+                    <div class="doc-icon__line"></div>
+                    <div class="doc-icon__line"></div>
+                </div>
+            </div>
+
+            <div class="connector connector--1"></div>
+
+            <div class="sync-icon">
+                <img src="images/Hettla.svg" alt="Sync icon" class="rounded">
+            </div>
+
+            <div class="connector connector--2"></div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                    <tr>
+                        <th style="width:12%">Regnr</th>
+                        <th style="width:14%">Märke</th>
+                        <th style="width:18%">Modell</th>
+                        <th style="width:38%">Motor</th>
+                        <th style="width:18%">Drivlina</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="connector connector--3"></div>
+
+            <div class="excel-icon">
+                <img src="images/excel.png" alt="Excel icon">
+            </div>
+        </section>
+
+        <div class="carousel">
+            <div class="group">
+                <img src="images/pyth.png" alt="Python logo" style="width: 50px;">
+                <img src="images/fastapi.svg" alt="Fast Api logo" style="width: 50px;">
+                <img src="images/zc.svg" alt="Zoho Creator logo" style="width: 50px;">
+                <img src="images/Ruby.png" alt="Ruby logo" style="width: 50px;">
+                <img src="images/excel.png" alt="Excel logo" style="width: 50px;">
+                <img src="images/slack.png" alt="Slack logo" style="width: 50px;">
+                <img src="images/drive.png" alt="Drive logo" style="width: 50px;">
+            </div>
+            <div aria-hidden="true" class="group">
+                <img src="images/pyth.png" alt="Python logo" style="width: 50px;">
+                <img src="images/fastapi.svg" alt="Fast Api logo" style="width: 50px;">
+                <img src="images/zc.svg" alt="Zoho Creator" style="width: 50px;">
+                <img src="images/Ruby.png" alt="Ruby logo" style="width: 50px;">
+                <img src="images/excel.png" alt="Excel logo" style="width: 50px;">
+                <img src="images/slack.png" alt="Slack logo" style="width: 50px;">
+                <img src="images/drive.png" alt="Drive logo" style="width: 50px;">
+            </div>
+        </div>
+
+        <div class="cta-container">
+        </div>
     </div>
-</div>
+</main>
 
-<div class="cta-container">
-    <a href="mailto:hugowennbergdixon@gmail.com" class="cta-button">@</a>
-</div>
-
-<footer class ="footer">
-    <a href="https://www.linkedin.com/company/hettla/">LinkedIn</a>
+<footer class="footer">
 </footer>
+
+<script>
+    (function(){
+        const data = [
+            ["NTR32M","Ford","Ranger Double Cab","2.3 EcoBoost + 11.8 kWh e-4WD (205 kW)","Fyrhulsdrift"],
+            ["RWB24F","Volvo","XC60","2.0 T6 B204T52 AWD Recharge (257 kW)","Fyrhulsdrift"],
+            ["SYP06B","Volkswagen","Golf 5-door","1.5 eTSI EA211 DXDB ACT OPF (110 kW)","Tvåhjulsdrift"],
+            ["ODT23Z","Polestar","Model 3","111 kWh AWD (360 kW)","Fyrhulsdrift"],
+            ["NKC96S","BMW","5 Series Touring","2.0 +19.4 kWh xDrive (220 kW)","Fyrhulsdrift"],
+            ["DCP14L","Porsche","911 Carrera GTS","3.6 H6 DWTB + 1.9 kWh (398 kW)","Tvåhjulsdrift"]
+        ];
+
+        const tbody = document.getElementById('tableBody');
+        const rowBaseDelays = [1.9, 2.15, 2.4, 2.65, 2.9, 3.15];
+
+        data.forEach((row, ri) => {
+            const tr = document.createElement('tr');
+            row.forEach((cell, ci) => {
+                const td = document.createElement('td');
+                const dot = ci === 0 ? '<span class="row-dot"></span>' : '';
+                const colDelay = ci * 0.07;
+                const totalDelay = rowBaseDelays[ri] + colDelay;
+                const dur = 0.35 + cell.length * 0.012;
+                // Use backticks (`) instead of normal quotes here
+                td.innerHTML = `${dot}<span class="cell-text" style="--delay:${totalDelay}s;--dur:${dur}s">${cell}</span>`;
+                tr.appendChild(td);
+            });
+            tbody.appendChild(tr);
+        });
+
+        requestAnimationFrame(() => {
+            document.querySelectorAll('.cell-text').forEach(el => {
+                el.classList.add('animate');
+            });
+        });
+    })();
+</script>
+<script src="index.js"></script>
 </body>
 </html>
