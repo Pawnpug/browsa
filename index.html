@@ -123,11 +123,12 @@
             row.forEach((cell, ci) => {
                 const td = document.createElement('td');
                 const dot = ci === 0 ? '<span class="row-dot"></span>' : '';
+                const glowClass = ci !== 0 ? 'glow-text' : '';
                 const colDelay = ci * 0.07;
                 const totalDelay = rowBaseDelays[ri] + colDelay;
                 const dur = 0.35 + cell.length * 0.012;
                 // Use backticks (`) instead of normal quotes here
-                td.innerHTML = `${dot}<span class="cell-text" style="--delay:${totalDelay}s;--dur:${dur}s">${cell}</span>`;
+                td.innerHTML = `${dot}<span class="cell-text ${glowClass}" style="--delay:${totalDelay}s;--dur:${dur}s">${cell}</span>`;
                 tr.appendChild(td);
             });
             tbody.appendChild(tr);
