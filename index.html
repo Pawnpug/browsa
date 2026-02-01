@@ -76,7 +76,7 @@
             </div>
         </section>
 
-        <div class="carousel">
+        <!-- <div class="carousel">
             <div class="group">
                 <img src="images/pyth.png" alt="Python logo" style="width: 50px;">
                 <img src="images/fastapi.svg" alt="Fast Api logo" style="width: 50px;">
@@ -95,7 +95,7 @@
                 <img src="images/slack.png" alt="Slack logo" style="width: 50px;">
                 <img src="images/drive.png" alt="Drive logo" style="width: 50px;">
             </div>
-        </div>
+        </div> -->
 
         <div class="cta-container">
         </div>
@@ -128,7 +128,6 @@
                 const colDelay = ci * 0.07;
                 const totalDelay = rowBaseDelays[ri] + colDelay;
                 const dur = 0.35 + cell.length * 0.012;
-                // Use backticks (`) instead of normal quotes here
                 td.innerHTML = `${dot}<span class="cell-text ${glowClass}" style="--delay:${totalDelay}s;--dur:${dur}s">${cell}</span>`;
                 tr.appendChild(td);
             });
