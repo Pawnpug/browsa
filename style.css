@@ -82,6 +82,10 @@ p {
 
     .workflow {
         padding: 20px 15px;
+        /* Skalar ner hela sektionen för att passa mobilskärmen utan att behöva scrolla */
+        transform: scale(0.85); 
+        transform-origin: top center;
+        margin-bottom: -40px; /* Kompenserar för tomrummet som scale skapar */
     }
 
     .carousel {
