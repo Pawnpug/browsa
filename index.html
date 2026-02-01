@@ -107,9 +107,9 @@
 <script>
     (function(){
         const data = [
-            ["NTR32M","Ford","Ranger Double Cab","2.3 EcoBoost + 11.8 kWh e-4WD (205 kW)","Fyrhjulsdrift"],
-            ["RWB24F","Volvo","XC60","2.0 T6 B204T52 AWD Recharge (257 kW)","Fyrhjulsdrift"],
-            ["SYP06B","Volkswagen","Golf 5-door","1.5 eTSI EA211 DXDB ACT OPF (110 kW)","Tvåhjulsdrift"],
+            ["NTR32M","Ford","Ranger Double","2.3 EcoBoost 11.8 kWh e (205 kW)","Fyrhjulsdrift"],
+            ["RWB24F","Volvo","XC60","2.0 T6 B204T52 AWD (257 kW)","Fyrhjulsdrift"],
+            ["SYP06B","Volkswagen","Golf 5-door","1.5 eTSI EA211 ACT (110 kW)","Tvåhjulsdrift"],
             ["ODT23Z","Polestar","Model 3","111 kWh AWD (360 kW)","Fyrhjulsdrift"],
             ["NKC96S","BMW","5 Series Touring","2.0 +19.4 kWh xDrive (220 kW)","Fyrhjulsdrift"],
             ["DCP14L","Porsche","911 Carrera GTS","3.6 H6 DWTB + 1.9 kWh (398 kW)","Tvåhjulsdrift"]
@@ -141,6 +141,30 @@
         });
     })();
 </script>
+<style>
+.cell-text {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity var(--dur) ease-out var(--delay), transform var(--dur) ease-out var(--delay);
+}
+
+.cell-text.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.glow-text {
+    color: #0051ff;
+    text-shadow: 0 0 5px rgba(0, 212, 255, 0.7);
+    background: rgba(0, 212, 255, 0.1);
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+.row-dot {
+}
+</style>
 <script src="index.js"></script>
 </body>
 </html>

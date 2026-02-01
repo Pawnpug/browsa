@@ -364,6 +364,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     font-size: 9.5px;
+    table-layout: fixed; /* Låser kolumnbredderna direkt */
 }
 
 thead th {
@@ -415,23 +416,28 @@ tbody td:first-child { padding-left: 16px; }
 
 .cell-text {
     display: inline-block;
-    max-width: 0;
-    overflow: hidden;
     white-space: nowrap;
     vertical-align: middle;
+    width: auto;
+    opacity: 0;
+    /* Maskerar texten så den ser ut att skrivas ut */
+    clip-path: inset(0 100% 0 0); 
 }
+
 .cell-text.animate {
-    animation: cellReveal var(--dur, 0.6s) cubic-bezier(.22,1,.36,1) forwards;
+    animation: cellReveal var(--dur, 0.6s) steps(40, end) forwards;
     animation-delay: var(--delay, 0s);
 }
 
-.glow-text {
-    color: #4a90f5;
-    text-shadow: 0 0 8px rgba(74, 144, 245, 0.6);
-}
-
 @keyframes cellReveal {
-    to { max-width: 500px; }
+    from {
+        opacity: 1;
+        clip-path: inset(0 100% 0 0);
+    }
+    to {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+    }
 }
 
 .excel-icon {
