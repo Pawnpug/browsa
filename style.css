@@ -6,7 +6,7 @@ body {
     padding: 0;
     font-family: "Roboto", Arial, sans-serif;
     color: #000000;
-    background-color: #ffffff;
+    background-color: #f0efe9;
 }
 
 @media (min-width: 1600px) {
@@ -221,11 +221,9 @@ p {
 }
 
 .cta-button {
-    background: rgb(71, 109, 254);
-    border: 1px solid rgba(0, 0, 0, 0.36);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    color: #000000;
+    background: #000000;
+    border: 1px solid #000000;
+    color: #f0efe9;
     padding: 15px 30px;
     border-radius: 15px;
     text-decoration: none;
@@ -235,8 +233,8 @@ p {
 }
 
 .cta-button:hover {
-    background: rgba(71, 109, 254, 0.57);
-    border: 1px solid rgba(255, 255, 255, 0.82);
+    background: #222222;
+    border: 1px solid #222222;
     transition: background 0.3s ease;
 }
 
@@ -273,7 +271,8 @@ p {
     gap: 0;
     width: 100%;
     max-width: 520px;
-    background: #f4f4f4;
+    background: #e3dacc;
+    border: 1px solid #000000;
     border-radius: 24px;
     padding: 32px 28px;
     position: relative;
@@ -286,14 +285,14 @@ p {
     font-family: "Tomorrow", Arial, sans-serif;
     font-size: 12px;
     font-weight: 500;
-    color: #999;
+    color: #000000;
     letter-spacing: 0.5px;
 }
 
 .connector {
     width: 1.5px;
     height: 20px;
-    background: #d4d4d4;
+    background: #000000;
     opacity: 0;
     animation: fadeIn 0.4s ease forwards;
 }
@@ -314,14 +313,14 @@ p {
 .doc-icon__label {
     font-size: 10px;
     font-weight: 500;
-    color: #666;
+    color: #000000;
     letter-spacing: 0.3px;
 }
 .doc-icon__paper {
     width: 30px;
     height: 38px;
-    background: #f5f5f5;
-    border: 1.5px solid #e0e0e0;
+    background: #f0efe9;
+    border: 1px solid #000000;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -332,7 +331,7 @@ p {
 }
 .doc-icon__line {
     height: 2px;
-    background: #d6d6d6;
+    background: #000000;
     border-radius: 2px;
 }
 .doc-icon__line:nth-child(1) { width: 70%; }
@@ -341,10 +340,6 @@ p {
 .doc-icon__line:nth-child(4) { width: 80%; }
 
 .sync-icon {
-    width: 36px;
-    height: 36px;
-    background: #4a90f5;
-    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -352,16 +347,15 @@ p {
     transform: scale(0.6);
     animation: revealScale 0.45s cubic-bezier(.22,1,.36,1) forwards;
     animation-delay: 0.7s;
-    box-shadow: 0 3px 12px rgba(74,144,245,0.35);
 }
 .sync-icon img {
-    width: 22px;
-    height: 22px;
+    width: 32px;
+    height: 32px;
 }
 
 .table-wrap {
     width: 100%;
-    background: #ffffff;
+    background: #e3dacc;
     border-radius: 24px;
     padding: 14px 16px;
     opacity: 0;
@@ -382,7 +376,7 @@ table {
 thead th {
     text-align: left;
     font-weight: 700;
-    color: #999;
+    color: #0d2818;
     font-size: 8px;
     text-transform: uppercase;
     letter-spacing: 0.6px;
@@ -395,10 +389,15 @@ thead th:first-child,
 tbody td:first-child {
     padding-right: 20px;
 }
+thead {
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+    animation-delay: 1.65s;
+}
+
 tbody tr {
     opacity: 0;
-    transform: translateY(8px);
-    animation: rowIn 0.4s cubic-bezier(.22,1,.36,1) forwards;
+    animation: fadeIn 0.4s ease forwards;
 }
 tbody tr:nth-child(1) { animation-delay: 1.9s; }
 tbody tr:nth-child(2) { animation-delay: 2.15s; }
@@ -409,7 +408,7 @@ tbody tr:nth-child(6) { animation-delay: 3.15s; }
 
 tbody td {
     padding: 5px 0;
-    color: #222;
+    color: #0d2818;
     border-bottom: 1px solid #f0f0f0;
     white-space: nowrap;
     overflow: hidden;
@@ -421,7 +420,7 @@ tbody td:first-child { padding-left: 16px; }
     width: 5px;
     height: 5px;
     border-radius: 1.5px;
-    background: #4a90f5;
+    background: #0d2818;
     margin-right: 6px;
     vertical-align: middle;
 }
@@ -437,7 +436,7 @@ tbody td:first-child { padding-left: 16px; }
 }
 
 .cell-text.animate {
-    animation: cellReveal var(--dur, 0.6s) steps(40, end) forwards;
+    animation: cellReveal var(--dur, 0.5s) cubic-bezier(0.4, 0, 0.2, 1) forwards;
     animation-delay: var(--delay, 0s);
 }
 
@@ -448,7 +447,7 @@ tbody td:first-child { padding-left: 16px; }
     }
     to {
         opacity: 1;
-        clip-path: inset(0 0 0 0);
+        clip-path: inset(0 0% 0 0);
     }
 }
 
@@ -462,9 +461,9 @@ tbody td:first-child { padding-left: 16px; }
     justify-content: center;
     overflow: hidden;
     opacity: 0;
-    transform: scale(0.6);
-    animation: revealScale 0.45s cubic-bezier(.22,1,.36,1) forwards;
-    animation-delay: 4.5s;
+    transform: translateY(-8px);
+    animation: revealDown 0.5s cubic-bezier(.22,1,.36,1) forwards;
+    animation-delay: 4.45s;
     box-shadow: 0 3px 10px rgba(33,163,102,0.3);
 }
 .excel-icon img {
