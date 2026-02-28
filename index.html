@@ -34,7 +34,7 @@
 
     <div class="right-column">
         <section class="workflow">
-            <span class="workflow-label">[KUNDCASE]</span>
+            <span class="workflow-label">[KUNDCASE]<span class="live-dot"></span></span>
 
             <div class="doc-icon">
                 <span class="doc-icon__label">Regnummer</span>
@@ -46,13 +46,13 @@
                 </div>
             </div>
 
-            <div class="connector connector--1"></div>
+            <div class="connector connector--1"><span class="connector-dot"></span></div>
 
             <div class="sync-icon">
                 <img src="images/HettlaWB.png" alt="Sync icon" class="rounded">
             </div>
 
-            <div class="connector connector--2"></div>
+            <div class="connector connector--2"><span class="connector-dot"></span></div>
 
             <div class="table-wrap">
                 <table>
@@ -70,11 +70,13 @@
                 </table>
             </div>
 
-            <div class="connector connector--3"></div>
+            <div class="connector connector--3"><span class="connector-dot"></span></div>
 
             <div class="excel-icon">
                 <img src="images/excel.png" alt="Excel icon">
             </div>
+
+            <button class="replay-btn" id="replayBtn" title="Spela om">↺</button>
         </section>
 
         <!-- <div class="carousel">
@@ -119,27 +121,97 @@
 
         const tbody = document.getElementById('tableBody');
         const rowBaseDelays = [1.9, 2.15, 2.4, 2.65, 2.9, 3.15];
+        const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        let token = 0;
 
-        data.forEach((row, ri) => {
-            const tr = document.createElement('tr');
-            row.forEach((cell, ci) => {
-                const td = document.createElement('td');
-                const dot = ci === 0 ? '<span class="row-dot"></span>' : '';
-                const glowClass = ci !== 0 ? 'glow-text' : '';
-                const colDelay = ci * 0.07;
-                const totalDelay = rowBaseDelays[ri] + colDelay;
-                const dur = 0.35 + cell.length * 0.012;
-                td.innerHTML = `${dot}<span class="cell-text ${glowClass}" style="--delay:${totalDelay}s;--dur:${dur}s">${cell}</span>`;
-                tr.appendChild(td);
+        function scrambleReveal(el, finalText, delay, dur, tok) {
+            el.style.opacity = '0';
+            el.style.animation = 'none';
+            el.style.clipPath = 'none';
+            setTimeout(() => {
+                if (tok !== token) return;
+                el.style.opacity = '1';
+                const start = performance.now();
+                const totalMs = dur * 1000;
+                function tick(now) {
+                    if (tok !== token) return;
+                    const progress = Math.min((now - start) / totalMs, 1);
+                    const locked = Math.floor(progress * finalText.length);
+                    el.textContent = finalText.split('').map((ch, i) => {
+                        if (i < locked || ch === ' ') return ch;
+                        return CHARS[Math.floor(Math.random() * CHARS.length)];
+                    }).join('');
+                    if (progress < 1) requestAnimationFrame(tick);
+                    else el.textContent = finalText;
+                }
+                requestAnimationFrame(tick);
+            }, delay * 1000);
+        }
+
+        function buildTable() {
+            const tok = token;
+            tbody.innerHTML = '';
+            data.forEach((row, ri) => {
+                const tr = document.createElement('tr');
+                row.forEach((cell, ci) => {
+                    const td = document.createElement('td');
+                    if (ci === 0) {
+                        const dot = document.createElement('span');
+                        dot.className = 'row-dot';
+                        td.appendChild(dot);
+                    }
+                    const span = document.createElement('span');
+                    span.className = 'cell-text' + (ci !== 0 ? ' glow-text' : '');
+                    td.appendChild(span);
+                    tr.appendChild(td);
+                    const colDelay = ci * 0.07;
+                    const totalDelay = rowBaseDelays[ri] + colDelay;
+                    const dur = 0.35 + cell.length * 0.012;
+                    scrambleReveal(span, cell, totalDelay, dur, tok);
+                });
+                tbody.appendChild(tr);
             });
-            tbody.appendChild(tr);
+        }
+
+        buildTable();
+
+        // Replay button
+        document.getElementById('replayBtn').addEventListener('click', function() {
+            token++;
+            const btn = this;
+            btn.classList.remove('spinning');
+            void btn.offsetWidth;
+            btn.classList.add('spinning');
+
+            const toReset = [
+                ...document.querySelectorAll('.doc-icon, .sync-icon, .table-wrap, .excel-icon'),
+                ...document.querySelectorAll('.connector'),
+                ...document.querySelectorAll('.connector-dot'),
+                document.querySelector('thead'),
+            ];
+            toReset.forEach(el => { if (el) el.style.animation = 'none'; });
+            void document.querySelector('.workflow').offsetWidth;
+            toReset.forEach(el => { if (el) el.style.animation = ''; });
+
+            buildTable();
         });
 
-        requestAnimationFrame(() => {
-            document.querySelectorAll('.cell-text').forEach(el => {
-                el.classList.add('animate');
-            });
-        });
+        // Sub-text typewriter
+        const subText = document.querySelector('.sub-text');
+        const fullText = subText.textContent;
+        subText.textContent = '';
+        const subCursor = document.createElement('span');
+        subCursor.className = 'cursor';
+        subText.appendChild(subCursor);
+
+        let charIndex = 0;
+        setTimeout(() => {
+            const typeInterval = setInterval(() => {
+                if (charIndex >= fullText.length) { clearInterval(typeInterval); subCursor.style.animation = 'none'; subCursor.style.opacity = '0'; return; }
+                subText.insertBefore(document.createTextNode(fullText[charIndex]), subCursor);
+                charIndex++;
+            }, 55);
+        }, 500);
     })();
 </script>
 <style>
@@ -148,6 +220,7 @@
     background: rgba(133, 239, 172, 0.4);
     padding: 2px 8px;
     border-radius: 10px;
+    transition: background 0.15s ease;
 }
 </style>
 <script src="index.js"></script>

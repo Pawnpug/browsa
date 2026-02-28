@@ -290,6 +290,8 @@ p {
 }
 
 .connector {
+    position: relative;
+    overflow: visible;
     width: 1.5px;
     height: 20px;
     background: #000000;
@@ -398,6 +400,7 @@ thead {
 tbody tr {
     opacity: 0;
     animation: fadeIn 0.4s ease forwards;
+    transition: background 0.15s ease;
 }
 tbody tr:nth-child(1) { animation-delay: 1.9s; }
 tbody tr:nth-child(2) { animation-delay: 2.15s; }
@@ -482,4 +485,98 @@ tbody td:first-child { padding-left: 16px; }
 }
 @keyframes rowIn {
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Interactive additions ── */
+
+/* Flowing data dot on connectors */
+.connector-dot {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #0d2818;
+    border-radius: 50%;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    opacity: 0;
+    pointer-events: none;
+    animation: dotFlow 1.4s ease-in-out infinite;
+}
+.connector--1 .connector-dot { animation-delay: 1.0s; }
+.connector--2 .connector-dot { animation-delay: 1.85s; }
+.connector--3 .connector-dot { animation-delay: 4.55s; }
+
+@keyframes dotFlow {
+    0%   { top: 0;    opacity: 0; }
+    15%  {            opacity: 1; }
+    85%  {            opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
+
+
+/* Live pulse dot */
+.live-dot {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background: #21a366;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-left: 5px;
+    animation: livePulse 1.8s ease-in-out infinite;
+}
+@keyframes livePulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.25; }
+}
+
+/* Table row hover */
+tbody tr:hover { background: rgba(13, 40, 24, 0.05); }
+tbody tr:hover .glow-text { background: rgba(133, 239, 172, 0.65); }
+
+/* Replay button */
+.replay-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    border-radius: 8px;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease, background 0.15s ease, transform 0.2s ease;
+    color: #555;
+    padding: 0;
+    line-height: 1;
+}
+.workflow:hover .replay-btn { opacity: 1; }
+.replay-btn:hover {
+    background: rgba(0, 0, 0, 0.07);
+    transform: rotate(-20deg);
+}
+.replay-btn.spinning { animation: spinOnce 0.5s ease forwards; }
+@keyframes spinOnce {
+    to { transform: rotate(-360deg); }
+}
+
+/* Blinking cursor for h2 typewriter */
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 0.8em;
+    background: currentColor;
+    margin-left: 3px;
+    vertical-align: middle;
+    animation: blink 0.7s step-end infinite;
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
 }
