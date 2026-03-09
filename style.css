@@ -188,11 +188,8 @@ h1 {
     margin-bottom: 0;
 }
 
-#kontakt:target a {
-    color: #D4600A;
-    transition: color 0.3s;
-}
-#kontakt:target a:visited {
+.contact-block a,
+.contact-block a:visited {
     color: #D4600A;
 }
 
