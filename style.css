@@ -254,6 +254,11 @@ h1 {
 }
 
 @media (max-width: 600px) {
+    .typewriter {
+        white-space: normal;
+        width: auto;
+        overflow: visible;
+    }
     .process-grid {
         grid-template-columns: 1fr;
     }
