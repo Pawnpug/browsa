@@ -214,6 +214,7 @@ h1 {
 .process-num {
     font-family: "Courier New", Courier, monospace;
     font-size: 42px;
+    font-weight: bold;
     color: #D4600A;
     margin-bottom: 10px;
     letter-spacing: 1px;
