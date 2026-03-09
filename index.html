@@ -75,56 +75,38 @@
                     <animate attributeName="stroke-dashoffset" from="500" to="0" dur="1s" begin="1.4s" fill="freeze"/>
                 </path>
 
-                <!-- Client box: Kund A -->
-                <rect x="25" y="228" width="150" height="72" fill="#ffffff" stroke="#000000" stroke-width="1.5" opacity="0">
-                    <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="2s" fill="freeze"/>
-                </rect>
-                <text x="100" y="249" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#000000" opacity="0">
-                    Kund A
-                    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2.1s" fill="freeze"/>
-                </text>
-                <text x="100" y="264" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#555555" opacity="0">
-                    Faktureringssystem
-                    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2.2s" fill="freeze"/>
-                </text>
-                <text x="100" y="289" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#117743" opacity="0">
-                    ● ONLINE
-                    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2.3s" fill="freeze"/>
-                </text>
+                <!-- Client box: Bilhandel -->
+                <a href="#case-bilhandel" style="cursor:pointer">
+                    <rect x="25" y="228" width="150" height="72" fill="#ffffff" stroke="#000000" stroke-width="1.5" opacity="0">
+                        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="2s" fill="freeze"/>
+                    </rect>
+                    <text x="100" y="268" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#000000" opacity="0">
+                        Bilhandel
+                        <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2.1s" fill="freeze"/>
+                    </text>
+                </a>
 
-                <!-- Client box: Kund B -->
-                <rect x="275" y="228" width="150" height="72" fill="#ffffff" stroke="#000000" stroke-width="1.5" opacity="0">
-                    <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="2.2s" fill="freeze"/>
-                </rect>
-                <text x="350" y="249" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#000000" opacity="0">
-                    Kund B
-                    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2.3s" fill="freeze"/>
-                </text>
-                <text x="350" y="264" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#555555" opacity="0">
-                    Lagersystem
-                    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2.4s" fill="freeze"/>
-                </text>
-                <text x="350" y="289" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#117743" opacity="0">
-                    ● ONLINE
-                    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2.5s" fill="freeze"/>
-                </text>
+                <!-- Client box: Installation -->
+                <a href="#case-installation" style="cursor:pointer">
+                    <rect x="275" y="228" width="150" height="72" fill="#ffffff" stroke="#000000" stroke-width="1.5" opacity="0">
+                        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="2.2s" fill="freeze"/>
+                    </rect>
+                    <text x="350" y="268" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#000000" opacity="0">
+                        Installation
+                        <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2.3s" fill="freeze"/>
+                    </text>
+                </a>
 
-                <!-- Client box: Kund C -->
-                <rect x="525" y="228" width="150" height="72" fill="#ffffff" stroke="#000000" stroke-width="1.5" opacity="0">
-                    <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="2.4s" fill="freeze"/>
-                </rect>
-                <text x="600" y="249" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#000000" opacity="0">
-                    Kund C
-                    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2.5s" fill="freeze"/>
-                </text>
-                <text x="600" y="264" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#555555" opacity="0">
-                    Bokningssystem
-                    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2.6s" fill="freeze"/>
-                </text>
-                <text x="600" y="289" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#117743" opacity="0">
-                    ● ONLINE
-                    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2.7s" fill="freeze"/>
-                </text>
+                <!-- Client box: Dataanalys -->
+                <a href="#case-dataanalys" style="cursor:pointer">
+                    <rect x="525" y="228" width="150" height="72" fill="#ffffff" stroke="#000000" stroke-width="1.5" opacity="0">
+                        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="2.4s" fill="freeze"/>
+                    </rect>
+                    <text x="600" y="268" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#000000" opacity="0">
+                        Dataanalys
+                        <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2.5s" fill="freeze"/>
+                    </text>
+                </a>
 
                 <!-- Animated packets — orange → Kund A -->
                 <circle r="5" fill="#D4600A">
@@ -201,7 +183,7 @@
     <div class="cases-label">[ kundcase ]</div>
 
     <!-- Case 01: Bilhandel -->
-    <div class="case-card">
+    <div class="case-card" id="case-bilhandel">
         <div class="case-header">
             <span class="process-num">01</span>
             <span class="case-title">Bilhandel</span>
@@ -274,7 +256,7 @@
     </div>
 
     <!-- Case 02: Installationssystem -->
-    <div class="case-card">
+    <div class="case-card" id="case-installation">
         <div class="case-header">
             <span class="process-num">02</span>
             <span class="case-title">Installation</span>
@@ -382,7 +364,7 @@
     </div>
 
     <!-- Case 03: Dataanalys & SQL -->
-    <div class="case-card">
+    <div class="case-card" id="case-dataanalys">
         <div class="case-header">
             <span class="process-num">03</span>
             <span class="case-title">Dataanalys</span>
@@ -547,9 +529,6 @@
     </div>
 </div>
 
-<footer class="footer">
-    <p>Copyright &copy; 2025 Hettla</p>
-</footer>
 
 </body>
 </html>

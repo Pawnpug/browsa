@@ -17,6 +17,10 @@ a {
     color: #3333cc;
     text-decoration: underline;
 }
+
+svg a {
+    text-decoration: none;
+}
 a:visited {
     color: #551a8b;
 }
@@ -114,7 +118,7 @@ h1 {
 /* ── Diagram label ── */
 .diagram-label {
     font-family: "Courier New", Courier, monospace;
-    font-size: 10px;
+    font-size: 15px;
     color: #D4600A;
     margin-bottom: 8px;
     letter-spacing: 0.5px;
@@ -184,7 +188,7 @@ h1 {
 
 .process-label {
     font-family: "Courier New", Courier, monospace;
-    font-size: 10px;
+    font-size: 15px;
     color: #D4600A;
     margin-bottom: 8px;
     letter-spacing: 0.5px;
@@ -209,10 +213,11 @@ h1 {
 
 .process-num {
     font-family: "Courier New", Courier, monospace;
-    font-size: 11px;
+    font-size: 42px;
     color: #D4600A;
     margin-bottom: 10px;
     letter-spacing: 1px;
+    line-height: 1;
 }
 
 .process-card h3 {
@@ -255,7 +260,7 @@ h1 {
 
 .cases-label {
     font-family: "Courier New", Courier, monospace;
-    font-size: 10px;
+    font-size: 15px;
     color: #D4600A;
     margin-bottom: 8px;
     letter-spacing: 0.5px;
@@ -281,7 +286,7 @@ h1 {
 
 .case-title {
     font-family: "Courier New", Courier, monospace;
-    font-size: 13px;
+    font-size: 18px;
     font-weight: bold;
     color: #000000;
 }
