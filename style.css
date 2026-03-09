@@ -63,8 +63,8 @@ a:hover {
     transition: background-color 0.15s;
 }
 .nav-bar a:hover {
-    background-color: #7a1a28;
-    color: #ffffff;
+    background-color: #e8e8e8;
+    color: #000000;
     text-decoration: none;
 }
 
@@ -162,10 +162,18 @@ h1 {
     display: block;
 }
 
+/* ── Contact area ── */
+.contact-area {
+    max-width: 860px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+}
+
 /* ── Contact block ── */
 .contact-block {
-    border-top: 1px solid #cccccc;
-    padding-top: 16px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 22px 22px 20px;
 }
 
 .contact-block p {
