@@ -5,76 +5,187 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="/images/HettlaWB.png?v=2" type="image/svg">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Tomorrow:wght@300;400;500;600;700&display=swap">
     <title>Hettla</title>
     <meta name="description" content="Systemutveckling för små och stora företag">
 </head>
 <body>
 
-<div class="content">
-    <header>
-        <div class="header">
-            <img src="images/hletter.svg" alt="Hettla logo" width="30px">
-            <h1 class="noselect">ETTLA</h1>
-        </div>
-    </header>
+<div class="site-header">
+    <img src="images/hletter.svg" alt="Hettla" width="48px">
 </div>
 
-<main class="main-container">
-    <div class="text-section">
-        <h2>AI som stannar hos er <span class="sub-text">[lokal hårdvara, era modeller]</span></h2>
-        <p class="hero-text">Vi sätter upp och driftar lokala AI-modeller direkt hos er. Ingen data skickas till OpenAI, Google eller någon annan — allt körs och stannar hos er.</p>
-        <img src="images/ah.png" alt="logo" width="0px">
+<nav class="nav-bar">
+    <a href="mailto:hugowennbergdixon@gmail.com">KONTAKT</a>
+    <a href="https://www.linkedin.com/company/hettla/" target="_blank" rel="noopener">LINKEDIN</a>
+</nav>
 
-        <div class="contact-links">
-            <a href="mailto:hugowennbergdixon@gmail.com" class="cta-button">@</a>
-            <a href="https://www.linkedin.com/company/hettla/" class="linkedin-link">LinkedIn</a>
+<div class="content-area">
+    <div class="main-box">
+
+        <h1><span class="typewriter">Vi bygger och levererar system.</span></h1>
+        <p class="lead">IT-lösningar i molnet och on-prem.</p>
+
+        <div class="diagram-label">[ distribution ]</div>
+
+        <div class="svg-wrapper">
+            <!-- Scanline overlay -->
+            <div class="scanlines"></div>
+
+            <svg class="network-svg" viewBox="0 0 700 330" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#ececec" stroke-width="0.5"/>
+                    </pattern>
+                </defs>
+
+                <!-- Grid background -->
+                <rect width="700" height="330" fill="url(#grid)"/>
+
+                <!-- Server pulse ring (outer) -->
+                <rect x="252" y="12" width="196" height="74" rx="2" fill="none" stroke="#D4600A" stroke-width="1">
+                    <animate attributeName="opacity" values="0.15;0.7;0.15" dur="2.4s" repeatCount="indefinite"/>
+                    <animate attributeName="stroke-width" values="1;2;1" dur="2.4s" repeatCount="indefinite"/>
+                </rect>
+
+                <!-- Server box -->
+                <rect x="260" y="20" width="180" height="58" fill="#ffffff" stroke="#000000" stroke-width="2">
+                    <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="0.2s" fill="freeze"/>
+                </rect>
+                <text x="350" y="49" text-anchor="middle" dominant-baseline="middle" font-family="'Courier New', monospace" font-size="13" font-weight="bold" fill="#D4600A" opacity="0">
+                    HETTLA
+                    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.5s" fill="freeze"/>
+                </text>
+
+                <!-- Path 1: server → Kund A (left) -->
+                <path id="path1" d="M 350 78 L 350 148 L 100 148 L 100 228"
+                      fill="none" stroke="#D4600A" stroke-width="1.5" stroke-dasharray="500" stroke-dashoffset="500">
+                    <animate attributeName="stroke-dashoffset" from="500" to="0" dur="1s" begin="1s" fill="freeze"/>
+                </path>
+                <text x="218" y="142" font-family="'Courier New', monospace" font-size="8" fill="#D4600A" opacity="0" text-anchor="middle">
+                    v1.4.2 →
+                    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.8s" fill="freeze"/>
+                </text>
+
+                <!-- Path 2: server → Kund B (center) -->
+                <path id="path2" d="M 350 78 L 350 228"
+                      fill="none" stroke="#D4600A" stroke-width="1.5" stroke-dasharray="200" stroke-dashoffset="200">
+                    <animate attributeName="stroke-dashoffset" from="200" to="0" dur="0.7s" begin="1.2s" fill="freeze"/>
+                </path>
+                <text x="368" y="160" font-family="'Courier New', monospace" font-size="8" fill="#D4600A" opacity="0">
+                    v2.1.0 →
+                    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.8s" fill="freeze"/>
+                </text>
+
+                <!-- Path 3: server → Kund C (right) -->
+                <path id="path3" d="M 350 78 L 350 148 L 600 148 L 600 228"
+                      fill="none" stroke="#D4600A" stroke-width="1.5" stroke-dasharray="500" stroke-dashoffset="500">
+                    <animate attributeName="stroke-dashoffset" from="500" to="0" dur="1s" begin="1.4s" fill="freeze"/>
+                </path>
+                <text x="482" y="142" font-family="'Courier New', monospace" font-size="8" fill="#D4600A" opacity="0" text-anchor="middle">
+                    v3.0.1 →
+                    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2s" fill="freeze"/>
+                </text>
+
+                <!-- Client box: Kund A -->
+                <rect x="25" y="228" width="150" height="72" fill="#ffffff" stroke="#000000" stroke-width="1.5" opacity="0">
+                    <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="2s" fill="freeze"/>
+                </rect>
+                <text x="100" y="249" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#000000" opacity="0">
+                    Kund A
+                    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2.1s" fill="freeze"/>
+                </text>
+                <text x="100" y="264" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#555555" opacity="0">
+                    Faktureringssystem
+                    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2.2s" fill="freeze"/>
+                </text>
+                <text x="100" y="289" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#117743" opacity="0">
+                    ● ONLINE
+                    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2.3s" fill="freeze"/>
+                </text>
+
+                <!-- Client box: Kund B -->
+                <rect x="275" y="228" width="150" height="72" fill="#ffffff" stroke="#000000" stroke-width="1.5" opacity="0">
+                    <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="2.2s" fill="freeze"/>
+                </rect>
+                <text x="350" y="249" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#000000" opacity="0">
+                    Kund B
+                    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2.3s" fill="freeze"/>
+                </text>
+                <text x="350" y="264" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#555555" opacity="0">
+                    Lagersystem
+                    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2.4s" fill="freeze"/>
+                </text>
+                <text x="350" y="289" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#117743" opacity="0">
+                    ● ONLINE
+                    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2.5s" fill="freeze"/>
+                </text>
+
+                <!-- Client box: Kund C -->
+                <rect x="525" y="228" width="150" height="72" fill="#ffffff" stroke="#000000" stroke-width="1.5" opacity="0">
+                    <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="2.4s" fill="freeze"/>
+                </rect>
+                <text x="600" y="249" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#000000" opacity="0">
+                    Kund C
+                    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2.5s" fill="freeze"/>
+                </text>
+                <text x="600" y="264" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#555555" opacity="0">
+                    Bokningssystem
+                    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2.6s" fill="freeze"/>
+                </text>
+                <text x="600" y="289" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#117743" opacity="0">
+                    ● ONLINE
+                    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2.7s" fill="freeze"/>
+                </text>
+
+                <!-- Animated packets — orange → Kund A -->
+                <circle r="5" fill="#D4600A">
+                    <animateMotion dur="2s" repeatCount="indefinite" begin="2.2s">
+                        <mpath href="#path1"/>
+                    </animateMotion>
+                </circle>
+                <circle r="4" fill="#D4600A" opacity="0.6">
+                    <animateMotion dur="2s" repeatCount="indefinite" begin="3.2s">
+                        <mpath href="#path1"/>
+                    </animateMotion>
+                </circle>
+
+                <!-- Animated packets — blue → Kund B -->
+                <circle r="5" fill="#3333cc">
+                    <animateMotion dur="1.6s" repeatCount="indefinite" begin="2.5s">
+                        <mpath href="#path2"/>
+                    </animateMotion>
+                </circle>
+                <circle r="4" fill="#3333cc" opacity="0.6">
+                    <animateMotion dur="1.6s" repeatCount="indefinite" begin="3.3s">
+                        <mpath href="#path2"/>
+                    </animateMotion>
+                </circle>
+
+                <!-- Animated packets — green → Kund C -->
+                <circle r="5" fill="#117743">
+                    <animateMotion dur="2.2s" repeatCount="indefinite" begin="2.8s">
+                        <mpath href="#path3"/>
+                    </animateMotion>
+                </circle>
+                <circle r="4" fill="#117743" opacity="0.6">
+                    <animateMotion dur="2.2s" repeatCount="indefinite" begin="3.9s">
+                        <mpath href="#path3"/>
+                    </animateMotion>
+                </circle>
+            </svg>
         </div>
-    </div>
 
-    <div class="right-column">
-        <section class="ai-console">
-            <div class="console-header">
-                <div class="console-dots">
-                    <span class="dot dot--red"></span>
-                    <span class="dot dot--yellow"></span>
-                    <span class="dot dot--on"></span>
-                </div>
-            </div>
-
-            <div class="console-body">
-                <div class="chat-pair chat-pair--1">
-                    <div class="chat-q">Sammanfatta veckans kundärenden</div>
-                    <div class="chat-a chat-a--1">
-                        <span class="chat-avatar"><img src="images/HettlaWB.png" alt="H"></span>
-                        47 ärenden · vanligaste orsak: leveransfördröjning (31%)
-                    </div>
-                </div>
-                <div class="chat-pair chat-pair--2">
-                    <div class="chat-q">Vilket avtal löper ut snart?</div>
-                    <div class="chat-a chat-a--2">
-                        <span class="chat-avatar"><img src="images/HettlaWB.png" alt="H"></span>
-                        3 avtal inom 30 dagar · Kund A, C och F
-                    </div>
-                </div>
-                <div class="chat-pair chat-pair--3">
-                    <div class="chat-q">Skriv offert baserat på senaste ordern</div>
-                    <div class="chat-a chat-a--3">
-                        <span class="chat-avatar"><img src="images/HettlaWB.png" alt="H"></span>
-                        Offert skapad · sparad lokalt ✓
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="cta-container">
+        <div class="contact-block">
+            <p><b>E-post:</b> <a href="mailto:hugowennbergdixon@gmail.com">hugowennbergdixon@gmail.com</a></p>
+            <p><b>LinkedIn:</b> <a href="https://www.linkedin.com/company/hettla/" target="_blank" rel="noopener">linkedin.com/company/hettla</a></p>
         </div>
+
     </div>
-</main>
+</div>
 
 <footer class="footer">
+    <p>Copyright &copy; 2025 Hettla</p>
 </footer>
 
-<script src="index.js"></script>
 </body>
 </html>
