@@ -5,50 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="/images/Hettla.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Lora:wght@400;600&display=swap" rel="stylesheet">
     <title>Hettla</title>
     <meta name="description" content="Systemutveckling för små och stora företag">
 </head>
 <body>
 
-<header>
-    <div class="logo-text">HETTLA</div>
-</header>
+<canvas id="waves"></canvas>
 
 <main>
 
     <section class="hero">
-        <h1>Skräddarsydda system<br>för ert företag</h1>
-        <p class="subtitle">Systemutveckling för små och stora företag — från analys till driftsättning.</p>
+        <h1 class="logo"><span class="kern">H</span>ETT<span class="kern">L</span>A</h1>
+        <a href="mailto:hugowennbergdixon@gmail.com" class="contact-btn hero-btn">Kontakta oss</a>
     </section>
 
-    <div class="divider"></div>
-
     <section class="process">
-        <h2 class="section-title">Hur vi arbetar</h2>
         <div class="process-grid">
-            <div class="process-card">
+            <div class="card">
                 <h3>Analys</h3>
                 <p>Vi kartlägger er verksamhet, identifierar behov och hittar var störst nytta kan göras.</p>
             </div>
-            <div class="process-card">
+            <div class="card">
                 <h3>Utveckling</h3>
                 <p>Vi bygger lösningen efter era behov och förutsättningar — moln eller on-prem.</p>
             </div>
-            <div class="process-card">
-                <h3>Driftsättning & utbildning</h3>
-                <p>Vi driftsätter, utbildar och säkerställer att systemet används.</p>
+            <div class="card">
+                <h3>Driftsättning</h3>
+                <p>Vi driftsätter, utbildar och säkerställer att systemet används rätt.</p>
             </div>
         </div>
     </section>
 
-    <div class="divider"></div>
-
     <section class="contact">
-        <p>Har ni en idé eller ett problem som behöver lösas?</p>
-        <a href="mailto:hugowennbergdixon@gmail.com" class="btn-icon" title="Kontakta oss"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></a>
     </section>
 
 </main>
 
+<script src="index.js"></script>
 </body>
 </html>

@@ -1,156 +1,189 @@
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --black: #331414;
+    --white: #f7f3ee;
+    --green: #00ff7f;
+    --grid: 40px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #171717;
-    background: #ffffff;
+    background-color: var(--white);
+    background-image:
+        linear-gradient(to right,  rgba(51,20,20,0.13) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(51,20,20,0.13) 1px, transparent 1px);
+    background-size: var(--grid) var(--grid);
+    color: var(--black);
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-a { color: inherit; text-decoration: none; }
-
-/* ── Header ────────────────────────────────────────────────────────── */
-header {
-    display: flex;
-    align-items: center;
-    padding: 0 32px;
-    height: 72px;
-    border-bottom: none;
+/* ── Wave canvas ─────────────────────────────────────────────────── */
+#waves {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
 }
 
-.logo-text {
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    color: #171717;
-}
-
-/* ── Main ──────────────────────────────────────────────────────────── */
+/* ── Layout ──────────────────────────────────────────────────────── */
 main {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 0 24px;
+    position: relative;
+    z-index: 1;
 }
 
-/* ── Hero ───────────────────────────────────────────────────────────── */
+/* ── Hero ────────────────────────────────────────────────────────── */
 .hero {
-    padding: 80px 0 64px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
     text-align: center;
 }
 
-.hero h1 {
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -0.025em;
-    color: #171717;
-    margin-bottom: 20px;
+.logo {
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(30px, 8.5vw, 108px);
+    color: var(--black);
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin-bottom: 52px;
+    opacity: 0;
+    animation: rise 0.7s 0.15s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.kern {
+    letter-spacing: 0.07em;
+}
+
+.hero-btn {
+    opacity: 0;
+    animation: rise 0.7s 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .subtitle {
-    font-size: 18px;
-    color: #525252;
-    line-height: 1.6;
-    max-width: 460px;
-    margin: 0 auto 32px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(6px, 1.05vw, 11px);
+    color: var(--black);
+    line-height: 2.5;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: rise 0.7s 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.hero-actions {
-    display: flex;
-    justify-content: center;
+@keyframes rise {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0);    }
 }
 
-/* ── Button ────────────────────────────────────────────────────────── */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 10px 24px;
-    font-size: 15px;
-    font-weight: 500;
-    color: #171717;
-    background: #ffffff;
-    border: 1px solid #d4d4d4;
-    border-radius: 999px;
-    cursor: pointer;
-    transition: background 0.15s, border-color 0.15s;
-}
-.btn:hover {
-    background: #f5f5f5;
-    border-color: #a3a3a3;
-}
-
-.btn-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 64px;
-    height: 44px;
-    border-radius: 999px;
-    color: #171717;
-    border: 1px solid #d4d4d4;
-    transition: background 0.15s, border-color 0.15s;
-}
-.btn-icon:hover {
-    background: #f5f5f5;
-    border-color: #a3a3a3;
-}
-
-/* ── Divider ───────────────────────────────────────────────────────── */
-.divider {
-    height: 1px;
-    background: #e5e5e5;
-}
-
-/* ── Process ───────────────────────────────────────────────────────── */
+/* ── Process ─────────────────────────────────────────────────────── */
 .process {
-    padding: 56px 0;
-}
-
-.section-title {
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    margin-bottom: 32px;
-    text-align: center;
+    padding: 0 40px 80px;
 }
 
 .process-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    max-width: 960px;
+    margin: 0 auto;
+    border: 2px solid var(--black);
+    background: var(--white);
 }
 
-.process-card h3 {
-    font-size: 16px;
+.card {
+    padding: 40px 32px;
+    border-right: 2px solid var(--black);
+}
+
+.card:last-child {
+    border-right: none;
+}
+
+.card h3 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 20px;
     font-weight: 600;
-    margin-bottom: 8px;
+    letter-spacing: 0.01em;
+    text-transform: none;
+    margin-bottom: 20px;
+    line-height: 1.4;
 }
 
-.process-card p {
-    font-size: 14px;
-    color: #525252;
-    line-height: 1.65;
+.card p {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #2a2a2a;
+    letter-spacing: 0.01em;
 }
 
-/* ── Contact ───────────────────────────────────────────────────────── */
+/* ── Contact ─────────────────────────────────────────────────────── */
 .contact {
-    padding: 56px 0 80px;
+    padding: 80px 40px 100px;
     text-align: center;
 }
 
 .contact p {
-    font-size: 16px;
-    color: #525252;
-    margin-bottom: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 36px;
+    letter-spacing: 0.01em;
 }
 
-/* ── Responsive ────────────────────────────────────────────────────── */
-@media (max-width: 640px) {
-    .hero { padding: 56px 0 48px; }
-    .hero h1 { font-size: 28px; }
-    .subtitle { font-size: 16px; }
-    .process-grid { grid-template-columns: 1fr; gap: 32px; }
-    header { padding: 0 20px; }
-    main { padding: 0 20px; }
+.contact-btn {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--black);
+    text-decoration: none;
+    border: 2px solid var(--black);
+    padding: 18px 32px;
+    display: inline-block;
+    background: var(--white);
+    transition: background 0.08s, color 0.08s;
+}
+
+.contact-btn:hover {
+    background: var(--green);
+    color: var(--black);
+    border-color: var(--green);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 680px) {
+    .process { padding: 0 16px 60px; }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        border-right: none;
+        border-bottom: 2px solid var(--black);
+    }
+
+    .card:last-child {
+        border-bottom: none;
+    }
+
+    .contact {
+        padding: 60px 20px 80px;
+    }
 }
