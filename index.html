@@ -20,21 +20,28 @@
     <section class="hero">
         <h1 class="logo"><span class="kern">H</span>ETT<span class="kern">L</span>A</h1>
         <a href="mailto:hugowennbergdixon@gmail.com" class="contact-btn hero-btn">Kontakta oss</a>
-    </section>
 
-    <section class="process">
-        <div class="process-grid">
-            <div class="card">
-                <h3>Analys</h3>
-                <p>Vi kartlägger er verksamhet, identifierar behov och hittar var störst nytta kan göras.</p>
+        <div class="case-wrap case-wrap--tl">
+            <div class="case-card" data-case="automotive">
+                <h3>Fordonshandel</h3>
+                <p>Ett skräddarsytt system som kartlägger och automatiserar hela arbetsflödet – från lager till kundärenden.</p>
+                <button class="case-btn">Läs mer</button>
             </div>
-            <div class="card">
-                <h3>Utveckling</h3>
-                <p>Vi bygger lösningen efter era behov och förutsättningar — moln eller on-prem.</p>
+        </div>
+
+        <div class="case-wrap case-wrap--tr">
+            <div class="case-card" data-case="service">
+                <h3>Service & Installation</h3>
+                <p>En webb- och mobilapplikation som samlar fältarbetarnas och administratörernas arbetsdag i ett enda system.</p>
+                <button class="case-btn">Läs mer</button>
             </div>
-            <div class="card">
-                <h3>Driftsättning</h3>
-                <p>Vi driftsätter, utbildar och säkerställer att systemet används rätt.</p>
+        </div>
+
+        <div class="case-wrap case-wrap--bc">
+            <div class="case-card" data-case="analytics">
+                <h3>Dataanalys</h3>
+                <p>Analysdashboard för affärskritisk data i realtid.</p>
+                <button class="case-btn">Läs mer</button>
             </div>
         </div>
     </section>
@@ -43,6 +50,15 @@
     </section>
 
 </main>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-overlay"></div>
+    <div class="modal-box" id="modal-box">
+        <button class="modal-close" aria-label="Stäng">✕</button>
+        <h2 class="modal-title" id="modal-title"></h2>
+        <p class="modal-body" id="modal-body"></p>
+    </div>
+</div>
 
 <script src="index.js"></script>
 </body>

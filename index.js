@@ -25,12 +25,9 @@
     const GREEN  = 'rgba(0, 255, 127, 0.90)';
 
     const WAVES = [
-        { yRatio: 0.07,  amp: 26,  freq: 0.018, speed: 0.58, thick: 2, step: 1, phase: 0.00, color: MAROON },
         { yRatio: 0.26,  amp: 65,  freq: 0.011, speed: 0.27, thick: 3, step: 1, phase: 1.40, color: GREEN  },
         { yRatio: 0.48,  amp: 74,  freq: 0.009, speed: 0.17, thick: 4, step: 1, phase: 2.90, color: MAROON },
-        { yRatio: 0.60,  amp: 32,  freq: 0.026, speed: 0.80, thick: 2, step: 3, phase: 1.85, color: MAROON },
         { yRatio: 0.72,  amp: 50,  freq: 0.015, speed: 0.40, thick: 3, step: 2, phase: 0.65, color: GREEN  },
-        { yRatio: 0.90,  amp: 40,  freq: 0.021, speed: 0.64, thick: 2, step: 1, phase: 3.70, color: MAROON },
     ];
 
     function drawWave(w, t) {
@@ -62,4 +59,77 @@
     }
 
     requestAnimationFrame(frame);
+}());
+
+// ── Case modals ───────────────────────────────────────────────────
+(function () {
+    const cases = {
+        automotive: {
+            title:   'Fordonshandel',
+            body:    'Ett skräddarsytt system som samlar hela kedjan – inköp, lager och kundärenden – i ett enda flöde. Manuella kalkylark och splittrade rutiner ersattes av en lösning byggd exakt för den här verksamheten.',
+            results: ['60% kortare handläggningstid', 'Realtidsöversikt av lager och orderstatus', 'Skalbart för fler anläggningar']
+        },
+        service: {
+            title:   'Service & Installation',
+            body:    'En plattform i webb och mobil där arbetsorder, schemaläggning och kundhistorik möts i realtid. Fälttekniker och kontor arbetar nu i samma system – papper och parallella verktyg är borta.',
+            results: ['Pappershantering eliminerad', 'Kortare svarstider och färre felkörningar', 'Bättre projektöverblick för ledningen']
+        },
+        analytics: {
+            title:   'Dataanalys',
+            body:    'En dashboard som hämtar och visualiserar data från ett befintligt system på ett sätt som tidigare inte var möjligt. Information som låg inlåst är nu tillgänglig och läsbar i realtid.',
+            results: ['Datadrivna beslut utan externa verktyg', 'Eliminerat licensberoende för BI-verktyg', 'Anpassningsbart för nya datakällor']
+        }
+    };
+
+    const modal      = document.getElementById('modal');
+    const modalBox   = document.getElementById('modal-box');
+    const modalLabel = document.getElementById('modal-label');
+    const modalTitle = document.getElementById('modal-title');
+    const modalBody  = document.getElementById('modal-body');
+
+    var activeCard = null;
+
+    function positionNear(cardEl) {
+        var cardRect = cardEl.getBoundingClientRect();
+        var vw  = window.innerWidth;
+        var vh  = window.innerHeight;
+        var bw  = 320;
+        var gap = 40;
+
+        var left = (cardRect.left + cardRect.width / 2 < vw / 2)
+            ? cardRect.right + gap
+            : cardRect.left - bw - gap;
+
+        var top = cardRect.top - 8;
+
+        left = Math.max(12, Math.min(vw - bw - 12, left));
+        top  = Math.max(12, Math.min(vh - 420, top));
+
+        modalBox.style.left = left + 'px';
+        modalBox.style.top  = top  + 'px';
+    }
+
+    function openModal(key, cardEl) {
+        activeCard = cardEl;
+        var d = cases[key];
+        modalTitle.textContent = d.title;
+        modalBody.textContent  = d.body;
+        positionNear(cardEl);
+        modal.setAttribute('aria-hidden', 'false');
+        modal.classList.add('is-open');
+    }
+
+    function closeModal() {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        activeCard = null;
+    }
+
+    document.querySelectorAll('.case-card').forEach(function (card) {
+        card.addEventListener('click', function () { openModal(card.dataset.case, card); });
+    });
+
+    document.querySelector('.modal-overlay').addEventListener('click', closeModal);
+    document.querySelector('.modal-close').addEventListener('click', closeModal);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
 }());
